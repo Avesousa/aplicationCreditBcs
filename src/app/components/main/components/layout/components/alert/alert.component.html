@@ -1,0 +1,18 @@
+<!-- <ngb-alert *ngIf="isShow" [type]="type" [dismissible]="false">{{message}}</ngb-alert> -->
+
+<div class="ngToast">
+    <ngb-toast
+      *ngFor="let alert of alerts"
+      [class]="alert.classname"
+      [autohide]="alert.delay > 0"
+      [delay]="alert.delay || 5000"
+      (hidden)="remove(alert)"
+      [header]="alert.header"
+    >
+      <ng-template [ngIf]="isTemplate(alert)" [ngIfElse]="text">
+        <ng-template [ngTemplateOutlet]="alert.textShow"></ng-template>
+      </ng-template>
+
+      <ng-template #text>{{ alert.textShow }}</ng-template>
+    </ngb-toast>
+</div>

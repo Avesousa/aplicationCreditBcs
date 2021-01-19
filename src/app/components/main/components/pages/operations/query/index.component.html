@@ -1,0 +1,30 @@
+<div class="container-fluid d-flex flex-column">
+  <header class="p-3 d-flex flex-row justify-content-between align-items-center">
+    <h1 class="flex-column">Operaciones de {{month}}</h1>
+  </header>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Revisar</a>
+      <ng-template ngbNavContent>
+        <query-content [info]="info" type="RV">
+        </query-content>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Excluir</a>
+      <ng-template ngbNavContent>
+        <query-content [info]="info" type="EX">
+        </query-content>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <a ngbNavLink>No aprobar</a>
+      <ng-template ngbNavContent>
+        <query-content [info]="info" type="DL">
+        </query-content>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="pt-2"></div>
+</div>

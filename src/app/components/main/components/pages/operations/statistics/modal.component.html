@@ -1,0 +1,20 @@
+<layout-modal #layoutModal>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="container">
+          <table class="table table-responsive">
+            <thead class="panel-heading">
+              <tr>
+                <th *ngFor="let item of headerTable">{{item}}</th>
+              </tr>
+            </thead>
+            <tbody class="table-main-letter">
+              <tr *ngFor="let report of data">
+                  <td *ngFor="let item of headerData">{{report[item]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </layout-modal>

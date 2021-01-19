@@ -1,0 +1,5 @@
+<div *ngIf="config.center" class="text-center">
+    <div class="spinner-border spinner-border-{{config.size}}" role="status"></div><br>
+    <span *ngIf="config.showMessage" class="spinner-text">{{config.message}}</span>
+</div>
+<div *ngIf="!config.center" class="spinner-border spinner-border-{{config.size}}" role="status"></div>

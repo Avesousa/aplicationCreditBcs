@@ -1,0 +1,5 @@
+<layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: false, size: 'sm', center: false}" class="mr-3"></layout-spinner>
+<div *ngIf="!spinnerFlag" class="form-check">
+    <input class="form-check-input" type="checkbox" [value]="config.type"
+        [checked]="config.data.nuevaRecomendacion == config.type" (change)="action($event)">
+</div>

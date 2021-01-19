@@ -1,0 +1,17 @@
+<div
+  class="sidebar bg-dark text-light pl-0 pr-0"
+  id="sidebar"
+  [ngbCollapse]="layoutService.isSidebarCollapsed"
+>
+  <div class="collapse-wapper">
+    <div class="homepage">
+      <a href="/">
+        <img [src]="logo" alt="HSBC" width="150" class="homepage-logo" />
+      </a>
+    </div>
+    <layout-nav></layout-nav>
+    <div class="d-flex justify-content-center">
+      <button (click)="logout()">Cerrar Sesión</button>
+    </div>
+  </div>
+</div>

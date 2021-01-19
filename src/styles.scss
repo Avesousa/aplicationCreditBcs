@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "hsbc";
+  src: url("./assets/fonts/UniversNextforHSBCW01-Rg.woff2");
+}
+@font-face {
+  font-family: "hsbc-Medium";
+  src: url("./assets/fonts/UniversNextforHSBCW01-Md.woff2");
+}
+@font-face {
+  font-family: "hsbc-Light";
+  src: url("./assets/fonts/UniversNextforHSBCW01-Light.woff2");
+}
+@font-face {
+  font-family: "hsbc-Thin";
+  src: url("./assets/fonts//UniversNextforHSBCW01-Thin.woff2");
+}
+@font-face {
+  font-family: "hsbc-Bold";
+  src: url("./assets/fonts/UniversNextforHSBCW01-Bold.woff2");
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "hsbc", Arial, Helvetica, sans-serif !important;
+}
+
+h1 {
+  font-family: "hsbc-Thin", Arial, Helvetica, sans-serif;
+}
+
+@import "~bootstrap/scss/bootstrap";
+
+/**  style button  **/
+
+.btn {
+  border: 0;
+  border-radius: 0;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.btn-logout {
+  margin: auto 0;
+}
+
+.btn-primary {
+  font-family: "hsbc-Thin", Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  background: #db0011;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #83000a;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:focus {
+  background: #db0011;
+  box-shadow: none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem #ed7f88;
+}
+
+.btn-primary:active {
+  background: #db0011;
+  box-shadow: 0 0 0 0.2rem #ed7f88;
+}
+.btn-primary.active, .btn-primary:not(:disabled):not(.disabled).active {
+  background: #83000a;
+  box-shadow: none;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: #ed7f88;
+  border-color: #f5abb1;
+}
+
+.btn-secondary {
+  font-family: "hsbc-Thin", Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  background: #4d6474;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #3e505d;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:focus {
+  background: #4d6474;
+  box-shadow: none;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem #616d75;
+}
+
+.btn-secondary:active {
+  background: #4d6474;
+  box-shadow: 0 0 0 0.2rem #616d75;
+}
+
+//Color
+
+.bg-dark {
+  background-color: #000 !important;
+}
+
+// Form - input - label - select
+label {
+  margin-bottom: 0;
+}
+
+.form-group {
+  margin-bottom: 0.2rem;
+}
+
+.form-check {
+  float: left;
+}
+
+.form-report {
+  float: none;
+}
+
+
+
+
+
+// .form-check:not(:first-child) {
+//   margin-left: 10px;
+// }
+
+/* *Style text* */
+.title-link {
+  color: #929292;
+}
+.title-link:hover,
+.title-link:focus {
+  color: #fff;
+}
+
+.link {
+  color: #db0011;
+}
+
+.link:hover,
+.link:focus {
+  color: #ed7f88;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  border-top: red 4px solid;
+}
+
+.nav-tabs .nav-link {
+  border-top: 4px solid #C9D0D5;
+  background: #C9D0D5;
+  color: #333;
+}
+
+.nav-tabs .nav-link:hover {
+  background: #fff;
+  color: #333;
+}
+
+.nav-tabs .nav-link.disabled {
+  background: #D6D7D8;
+  color: #333;
+}
+
+.tab-content {
+  background: #fff;
+}
+
+.table{
+  min-height: 150px;
+  background: #fff;
+  font-size: 12px;
+}
+
+.form-select {
+  display: block;
+  width: 100%;
+  padding: .375rem 1.75rem .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  vertical-align: middle;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

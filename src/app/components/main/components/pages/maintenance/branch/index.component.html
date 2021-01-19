@@ -1,0 +1,56 @@
+<div class="container-fluid d-flex flex-column">
+  <header
+    class="p-3 d-flex flex-row justify-content-between align-items-center"
+  >
+    <h1 class="flex-column">Sucursales</h1>
+    <div class="flex-column pr-3">
+      <branch-modal #modalBranch (eventOpen)="openAddModal($event)"></branch-modal>
+      <layout-confirm #confirmBranch></layout-confirm>
+    </div>
+  </header>
+
+  <!-- Tabla de sucursales -->
+
+  <div class="flex-row mt-2">
+    <!-- Formulario para filtrar sucursales -->
+    
+    <div class="p-2 m-0">
+      <div class="container">
+        <form class="justify-content-between">
+          <div class="form-group form-inline">
+            <label for="codigo">Filtro:</label>
+            <input type="text" class="form-control ml-3" [(ngModel)]="searchTerm" name="searchTerm" (input)="search($event.target.value)" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <layout-alert #alertBranch></layout-alert>
+
+    <!-- Tabla de sucursales -->
+    <table class="table table-responsive">
+      <thead class="panel-heading">
+        <tr>
+          <th>Número</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+          <th></th>
+        </tr>
+      </thead>
+      
+      <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: true, size: 'xl', center: true, message:'Espere por favor...'}" class="mr-3"></layout-spinner>
+      <tbody *ngIf="!spinnerFlag" class="table-main-sucursal">
+        <tr *ngFor="let item of data">
+          <td><ngb-highlight [result]="item.numero" [term]="searchTerm"></ngb-highlight></td>
+          <td><ngb-highlight [result]="item.nombre" [term]="searchTerm"></ngb-highlight></td>
+          <td>
+            <button class="btn btn-info" (click)="openEditModal(item)">Modificar</button>
+          </td>
+          <td>
+            <button class="btn btn-dark" (click)="openDeleteModal(item)">Borrar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

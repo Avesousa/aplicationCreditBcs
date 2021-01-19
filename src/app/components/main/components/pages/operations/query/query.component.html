@@ -1,0 +1,57 @@
+<!-- Tabla -->
+<layout-alert #alert></layout-alert>
+<layout-confirm #confirmQuery></layout-confirm>
+<div class="flex-row mt-2">
+    <div class="col-12">
+        <table class="table table-responsive">
+            <thead class="panel-heading">
+                <tr>
+                    <th>Cuenta</th>
+                    <th>Tipo</th>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Vencimiento</th>
+                    <th>Tasa</th>
+                    <th>Puntero</th>
+                    <th>Limite</th>
+                    <th>ID</th>
+                    <th *ngIf="type == 'DL'">Motivo</th>
+                    <th *ngIf="type == 'RV'">PE</th>
+                    <th *ngIf="type == 'RV'">AC</th>
+                    <th *ngIf="type == 'RV'">DL</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="!spinnerFlag" class="table-main-letter">
+                <tr *ngFor="let item of data">
+                    <td>{{item.nroCta}}</td>
+                    <td>{{item.tipo_doc}}</td>
+                    <td>{{item.numero_doc}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.fecha}}</td>
+                    <td>{{item.tasa}}</td>
+                    <td>{{item.puntero}}</td>
+                    <td>{{item.limite}}</td>
+                    <td>{{item.id}}</td>
+                    <td *ngIf="type == 'RV'">
+                        <row-action [config]="{data:item,type:'PE',query:this}"></row-action>
+                    </td>
+                    <td *ngIf="type == 'RV'">
+                        <row-action [config]="{data:item,type:'AC',query:this}"></row-action>
+                    </td>
+                    <td *ngIf="type == 'RV'">
+                        <row-action [config]="{data:item,type:'DL',query:this}"></row-action>
+                    </td>
+                    <td *ngIf="type == 'DL'">
+                        <button class="btn btn-primary" (click)="getMotive(item)">
+                            <layout-spinner *ngIf="spinnerFlagMotive" [config]="{showMessage: false, size: 'sm', center: true}"></layout-spinner>
+                            <span>Ver Motivo</span>
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+            <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: true, size: 'xl', center: true, message:'Espere por favor...'}" class="mr-3"></layout-spinner>
+            <ngb-pagination *ngIf="data.length" [(page)]="page" [pageSize]="count" [collectionSize]="collectionSize" (pageChange)="getList()"></ngb-pagination>
+        </table>
+    </div>
+</div>

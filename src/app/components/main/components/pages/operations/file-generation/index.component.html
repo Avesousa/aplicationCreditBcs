@@ -1,0 +1,46 @@
+<div class="container-fluid d-flex flex-column">
+  <header
+    class="p-3 d-flex flex-row justify-content-between align-items-center"
+  >
+    <h1 class="flex-column">Listado de altas de acuerdos</h1>
+    <div class="flex-column pr-3" *ngIf="active == 1">
+      <file-generation-modal #modalFileGeneration></file-generation-modal>
+    </div>
+  </header>
+  <layout-alert #alertFileGeneration></layout-alert>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Alta automáticas de acuerdos</a>
+      <ng-template ngbNavContent>
+        <div class="d-flex flex-column p-2 pb-5">
+          <div class="mb-2">
+            <span>Listado de información que se va a enviar.</span>
+          </div>
+          <div class="">
+            <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: false, size: 'sm', center: false}" class="mr-3"></layout-spinner>
+            <button
+              (click)="openModal()"
+              [disabled]="spinnerFlag"
+              class="btn btn-secondary mr-3"
+            >
+              Ver listado
+            </button>
+            <button
+              (click)="sendLetter()"
+              [disabled]="spinnerFlag"
+              class="btn btn-primary"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2" disabled="true">
+      <a ngbNavLink>Cartas</a>
+      <ng-template ngbNavContent> Cartas!! </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="pt-2"></div>
+</div>

@@ -1,0 +1,4 @@
+<layout-modal #layoutModal>
+    <span>{{textConfirm}}</span>
+    <textarea *ngIf="withMotive" class="form-control" rows="5" cols="120" [(ngModel)]="motive" [disabled]="textDisabled"></textarea>
+</layout-modal>

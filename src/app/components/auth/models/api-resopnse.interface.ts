@@ -1,0 +1,3 @@
+interface ApiResopnse {
+  data: any;
+}

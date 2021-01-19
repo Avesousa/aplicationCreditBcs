@@ -1,0 +1,147 @@
+<nav class="side-nav">
+  <div class="mb-1 text-appercase d-block text-muted">
+    <div class="title">Renovación de acuerdos</div>
+  </div>
+  <ul id="sidebarNav" class="nav nav-dark flex-column">
+    <li class="nav-item title-nav-li">
+      <a
+        class="nav-link collapsed"
+        aria-control="cNavItem1"
+        (click)="toggleNav(0)"
+        [attr.aria-expanded]="isOpen(0)"
+      >
+        <span class="d-none d-inline title-nav"> Informes </span>
+      </a>
+      <ul
+        id="cNavItem1"
+        class="nav flex-column collapsed bg-dark flex-nowrap"
+        [ngbCollapse]="!isOpen(0)"
+        [routerLinkActive]="['show']"
+      >
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="listados/excluir"
+            routerLinkActive="is-active"
+            >Excluir</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="listados/aceptar"
+            routerLinkActive="is-active"
+            >Aceptar</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="listados/rechazar"
+            routerLinkActive="is-active"
+            >Rechazar</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="listados/buscar"
+            routerLinkActive="is-active"
+            >Buscar</a
+          >
+        </li>
+      </ul>
+    </li>
+    <li class="nav-item title-nav-li">
+      <a
+        class="nav-link collapsed"
+        aria-control="cNavItem1"
+        (click)="toggleNav(1)"
+        [attr.aria-expanded]="isOpen(1)"
+      >
+        <span class="d-none d-inline title-nav"> Operaciones </span>
+      </a>
+      <ul
+        id="cNavItem1"
+        class="nav flex-column collapsed bg-dark flex-nowrap"
+        [ngbCollapse]="!isOpen(1)"
+        [routerLinkActive]="['show']"
+      >
+        <li *ngFor="let item of lastPeriod" class="nav-item nav-link-li">
+          <a
+          href=""
+          class="nav-link nav-level-1 link"
+          routerLink="operaciones/consultas/{{item.fechaDesde}}/{{item.fechaHasta}}/{{item.descripcion.trim()}}"
+          routerLinkActive="is-active">{{item.descripcion.trim()}}</a>
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="operaciones/estadistica"
+            routerLinkActive="is-active"
+            >Estadistica</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="operaciones/generacion-archivos"
+            routerLinkActive="is-active"
+            >Generación de Archivo</a
+          >
+        </li>
+
+      </ul>
+    </li>
+    <li class="nav-item title-nav-li">
+      <a
+        class="nav-link collapsed"
+        aria-control="cNavItem1"
+        (click)="toggleNav(2)"
+        [attr.aria-expanded]="isOpen(2)"
+      >
+        <span class="d-none d-inline title-nav"> Mantenimiento </span>
+      </a>
+      <ul
+        id="cNavItem"
+        class="nav flex-column collapsed bg-dark flex-nowrap"
+        [ngbCollapse]="!isOpen(2)"
+        [routerLinkActive]="['show']"
+      >
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="mantenimiento/comisiones-cartas"
+            routerLinkActive="is-active"
+            >Fechas Comisiones/Cartas</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="mantenimiento/productos"
+            routerLinkActive="is-active"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item nav-link-li">
+          <a
+            href=""
+            class="nav-link nav-level-1 link"
+            routerLink="mantenimiento/sucursales"
+            routerLinkActive="is-active"
+            >Sucursales</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

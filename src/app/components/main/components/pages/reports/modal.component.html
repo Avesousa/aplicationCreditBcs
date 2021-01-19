@@ -1,0 +1,37 @@
+<layout-modal #layoutModal>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="container" *ngFor="let branch of data | keyvalue">
+          <div class="headerBranch mb-2">
+            <span>BCS - Listado de Acuerdos {{agreementType}}</span><br>
+            <span>Periodo Desde: - Hasta: - </span><br>
+            <span>Sucursal {{branch.key}} {{getNameBranch(branch.key).nombre}}</span><br>
+          </div>
+          <table class="table table-responsive" >
+            <thead class="panel-heading">
+              <tr>
+                <th>Cuenta</th>
+                <th>Vencimiento</th>
+                <th>Nombre</th>
+                <th>Limite</th>
+                <th>Limite SW</th>
+                <th>Ultima fecha</th>
+                <th>Ultimo usuario</th>
+              </tr>
+            </thead>
+            <tbody class="table-main-letter">
+              <tr *ngFor="let item of data[branch.key]">
+                <td>{{ item.nroCta }}</td>
+                <td>{{ item.vencimiento }}</td>
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.limite }}</td>
+                <td>{{ item.limiteSW }}</td>
+                <td>{{ item.fechaUltAct }}</td>
+                <td>{{ item.usuarioUltAct }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </layout-modal>

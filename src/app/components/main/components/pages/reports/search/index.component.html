@@ -1,0 +1,83 @@
+<div class="container-fluid d-flex flex-column">
+  <header
+    class="p-3 d-flex flex-row justify-content-between align-items-center"
+  >
+    <h1 class="flex-column">Buscar cliente</h1>
+  </header>
+  
+  <search-modal #modalSearch></search-modal>
+  <layout-alert #alertSearch></layout-alert>
+  <div class="flex-row mt-2">
+    <!-- Formulario para filtrar productos -->
+
+    <div class="p-2 m-0">
+      <div class="container">
+        <form class="justify-content-between">
+          <div class="form-group">
+            <label for="doc">Documento:</label>
+            <select
+              name="typeDoc"
+              id="type"
+              class="form-select"
+              [(ngModel)]="request.tipoDocumento"
+              aria-label="tipo de documento"
+            >
+              <option value="" disabled selected>Seleccionar tipo</option>
+              <option value="DNI">DNI</option>
+              <option value="CI">CI</option>
+              <option value="LE">LE</option>
+              <option value="PAS">PAS</option>
+              <option value="CUIT">CUIT</option>
+            </select>
+            <input
+              *ngIf="request.tipoDocumento != 'CUIT'"
+              type="text"
+              class="form-control"
+              [(ngModel)]="request.nroDocumento"
+              placeholder=""
+              name="doc"
+            />
+            <input
+              *ngIf="request.tipoDocumento == 'CUIT'"
+              type="text"
+              class="form-control"
+              [(ngModel)]="request.cuit"
+              placeholder=""
+              name="doc"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder=""
+              [(ngModel)]="request.nombre"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="account">Numero de cuenta:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder=""
+              [(ngModel)]="request.nroCta"
+              name="account"
+            />
+          </div>
+          <div class="form-group">
+            <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: false, size: 'sm', center: false}" class="mr-3"></layout-spinner>
+            <button
+              (click)="openModal()"
+              [disabled]="spinnerFlag"
+              class="btn btn-secondary mr-3"
+            >
+              Ver resultado
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="container-fluid d-flex flex-column">
+  <header
+    class="p-3 d-flex flex-row justify-content-between align-items-center"
+  >
+    <h1 class="flex-column">Productos</h1>
+    <div class="flex-column pr-3">
+      <product-modal #modalProduct (eventOpen)="openAddModal($event)"></product-modal>
+      <layout-confirm #confirmProduct></layout-confirm>
+    </div>
+  </header>
+
+  <layout-alert #alertProduct></layout-alert>
+
+  <!-- Tabla de productos -->
+
+  <div class="flex-row mt-2">
+    <!-- Formulario para filtrar productos -->
+
+    <div class="p-2 m-0">
+      <div class="container">
+        <form class="justify-content-between">
+          <div class="form-group form-inline">
+            <label for="codigo">Filtro:</label>
+            <input type="text" 
+              class="form-control ml-3" 
+              [(ngModel)]="searchTerm" 
+              name="searchTerm" 
+              (input)="search($event.target.value)" />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TABLA DE PRODUCTOS -->
+    <table class="table table-responsive">
+      <thead class="panel-heading">
+        <tr>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Comisión</th>
+          <th>Acciones</th>
+          <th></th>
+        </tr>
+      </thead>
+      <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: true, size: 'xl', center: true, message:'Espere por favor...'}" class="mr-3"></layout-spinner>
+      <tbody *ngIf="!spinnerFlag" class="table-main-product">
+        <tr *ngFor="let item of data">
+          <td>
+            <ngb-highlight 
+              [result]="item.codigo" 
+              [term]="searchTerm">
+            </ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight 
+              [result]="item.descripcion" 
+              [term]="searchTerm">
+            </ngb-highlight>
+          </td>
+          <td>
+            <ngb-highlight 
+              [result]="(item.comision == 'S' ? 'Si' : 'No')" 
+              [term]="searchTerm">
+            </ngb-highlight>
+          </td>
+
+          <!-- Botones para accionar -->
+          
+          <td><button class="btn btn-info" (click)="openEditModal(item)">Editar</button></td>
+          <td><button class="btn btn-dark" (click)="openDeleteModal(item)">Borrar</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

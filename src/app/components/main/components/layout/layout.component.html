@@ -1,0 +1,12 @@
+<div class="layout-container d-flex flex-column">
+  <div class="d-flex flex-row bg-dark">
+    <layout-sidebar></layout-sidebar>
+    <div class="d-flex bg-light flex-column flex-fill">
+      <layout-header></layout-header>
+      <main class="main-container">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  <layout-footer></layout-footer>
+</div>

@@ -1,0 +1,36 @@
+<layout-modal #layoutModal>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <table class="table table-responsive">
+        <thead class="panel-heading">
+          <tr>
+            <th>Cuit</th>
+            <th>Cuenta</th>
+            <th>Tipo de documento</th>
+            <th>Documento</th>
+            <th>Vencimiento</th>
+            <th>Renueva</th>
+            <th>Sucursal</th>
+            <th>Cliente</th>
+            <th>Nombre</th>
+            <th>Limite SW</th>
+          </tr>
+        </thead>
+        <tbody class="table-main-letter">
+          <tr *ngFor="let item of data">
+            <td>{{ item.cuit }}</td>
+            <td>{{ item.cuenta }}</td>
+            <td>{{ item.codigoTipoDoc }}</td>
+            <td>{{ item.documento }}</td>
+            <td>{{ item.vencimiento }}</td>
+            <td>{{ item.renueva }}</td>
+            <td>{{ item.sucursal }}</td>
+            <td>{{ item.cliente }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.limiteSW }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</layout-modal>

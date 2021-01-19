@@ -1,0 +1,66 @@
+nav.side-nav {
+  font-size: 14px;
+  overflow-y: hidden;
+}
+
+a {
+  cursor: pointer;
+  border-right: 2px #000 solid;
+}
+
+li.nav-item > ul > li > a {
+  margin-left: 10px;
+}
+
+.title-nav {
+  font-family: "hsbc", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.title-nav:hover {
+  font-weight: 700 !important;
+}
+
+.title-nav-li a,
+.nav-link-li > a {
+  background-color: #c9d0d5;
+  margin-bottom: 1px;
+  color: #333;
+}
+
+.title-nav-li a.is-active,
+.nav-link-li > a.is-active {
+  background-color: #fff;
+  font-weight: 700;
+  color: #333;
+}
+
+.title-nav-li a:hover,
+.nav-link-li > a:hover {
+  background-color: #fff;
+  font-weight: 900;
+  color: #333;
+}
+
+.title-nav-li > a {
+  border-left: 10px #db0011 solid;
+  background-color: #fff;
+  font-weight: 700;
+  color: #333;
+}
+
+.title-nav-li > a:hover {
+  background-color: #fff;
+  color: #333;
+  border-left: 10px #db0011 solid;
+  font-weight: 700;
+}
+
+.title {
+  font-family: "hsbc-Light", Arial, Helvetica, sans-serif;
+  padding: 1rem 0.3rem 1rem 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2rem;
+  text-align: center;
+}

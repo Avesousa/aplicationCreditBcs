@@ -1,0 +1,208 @@
+{
+  "user": [
+    {
+      "permisos": [],
+      "username": "Test",
+      "perfil": "ADMIN",
+      "terminal": "test",
+      "complete": true,
+      "sucursalPeopleSoft": "X",
+      "ipMachine": "1.1.1.1"
+    }
+  ],
+  "producto": [
+    {
+      "codigo": 1234,
+      "descripcion": "Esto es un product desde fake server 1234",
+      "comision": "S"
+    },
+    {
+      "codigo": 5865,
+      "descripcion": "Esto es un product desde fake server 5865",
+      "comision": "N"
+    },
+    {
+      "codigo": 7869,
+      "descripcion": "Esto es un product desde fake server 7869",
+      "comision": "S"
+    }
+  ],
+  "sucursal": [
+    {
+      "numero": 1234,
+      "nombre": "Esto es una sucursal del fakeserve 1234"
+    },
+    {
+      "numero": 5865,
+      "nombre": "Esto es una sucursal del fakeserve 5865"
+    },
+    {
+      "numero": 7869,
+      "nombre": "Esto es una sucursal del fakeserve 7869"
+    },
+    {
+      "numero": 124321,
+      "nombre": "Esto es una sucursal del fakeserve"
+    },
+    {
+      "numero": 124321,
+      "nombre": "Esto es una sucursal del fakeserve 124321"
+    }
+  ],
+  "fechaEnvio": [
+    {
+      "tipoArchivo": "CARTA",
+      "fecha": "Fri Dec 18 2020 10:07:37 GMT-0300",
+      "mesVencimiento": "11/20",
+      "usuario": "admin"
+    },
+    {
+      "tipoArchivo": "IMPACS",
+      "fecha": "Fri Dec 18 2020 10:07:37 GMT-0300",
+      "mesVencimiento": "11/20",
+      "usuario": "admin"
+    },
+    {
+      "tipoArchivo": "CARTA",
+      "fecha": "Fri Dec 18 2020 10:07:37 GMT-0300",
+      "mesVencimiento": "11/20",
+      "usuario": "admin"
+    },
+    {
+      "tipoArchivo": "IMPACS",
+      "fecha": "Fri Dec 18 2020 10:07:37 GMT-0300",
+      "mesVencimiento": "11/20",
+      "usuario": "admin"
+    }
+  ],
+  "ultimosPeriodos": [
+    {
+      "desde": "20200902",
+      "hasta": "20200928",
+      "descripcion": "092020",
+      "mes": "Septiembre"
+    },
+    {
+      "desde": "20201002",
+      "hasta": "20201028",
+      "descripcion": "102020",
+      "mes": "Octubre"
+    },
+    {
+      "desde": "20201102",
+      "hasta": "20201128",
+      "descripcion": "112020",
+      "mes": "Noviembre"
+    }
+  ],
+  "acuerdos": [
+    {
+      "id": 1,
+      "nroCta": 684329843210,
+      "nombre": "Jose Loupo",
+      "renueva": "RV",
+      "nuevaRecomendacion": "",
+      "fecha": "20/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 95685276,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    },
+    {
+      "id": 2,
+      "nroCta": 721849212432,
+      "nombre": "Rafael Porlamar",
+      "renueva": "RV",
+      "nuevaRecomendacion": "",
+      "fecha": "23/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 26390042,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    },
+    {
+      "id": 3,
+      "nroCta": 214941923840,
+      "nombre": "Juan Rodríguez",
+      "renueva": "RV",
+      "nuevaRecomendacion": "",
+      "fecha": "10/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 27117647,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    },
+    {
+      "id": 4,
+      "nroCta": 684329843210,
+      "nombre": "Jose Loupo",
+      "renueva": "EX",
+      "nuevaRecomendacion": "",
+      "fecha": "20/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 95685276,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    },
+    {
+      "id": 5,
+      "nroCta": 721849212432,
+      "nombre": "Rafael Porlamar",
+      "renueva": "DL",
+      "nuevaRecomendacion": "",
+      "fecha": "23/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 26390042,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    },
+    {
+      "id": 6,
+      "nroCta": 214941923840,
+      "nombre": "Juan Rodríguez",
+      "renueva": "DL",
+      "nuevaRecomendacion": "",
+      "fecha": "10/09/2020",
+      "limite": 13124214.9,
+      "tasa": 5049,
+      "puntero": 40,
+      "_id": 1,
+      "tipo_doc": "DNI",
+      "numero_doc": 27117647,
+      "cantidad": 6,
+      "maximo": 400,
+      "motivo": "Un motivo de prueba"
+    }
+  ],
+  "ultimosMeses": [
+    "Todos",
+    "202009",
+    "202010",
+    "202011"
+  ]
+}

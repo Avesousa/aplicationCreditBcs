@@ -1,0 +1,52 @@
+<!-- Tabla de cartas -->
+
+<div class="flex-row mt-2">
+  <div class="col-12">
+    <layout-alert #alertCommission></layout-alert>
+    <table class="table table-responsive">
+      <thead class="panel-heading">
+        <tr>
+          <th>Tipo de archivo</th>
+          <th>Fecha</th>
+          <th>Mes de vencimiento</th>
+          <th>Usuario</th>
+          <th>Acción</th>
+          <th></th>
+        </tr>
+      </thead>
+      <layout-spinner *ngIf="spinnerFlag" [config]="{showMessage: true, size: 'xl', center: true, message:'Espere por favor...'}" class="mr-3"></layout-spinner>
+      <tbody *ngIf="!spinnerFlag" class="table-main-letter">
+        <tr *ngFor="let item of data">
+          <td class="">
+            {{ item.tipoArchivo == "IMPACS" ? "Comisiones" : "Cartas" }}
+          </td>
+          <td class="">
+            {{ item.formatFecha }}
+          </td>
+          <td class="">{{ item.mesVencimiento }}</td>
+          <td class="">{{ item.usuario }}</td>
+          <td>
+            <button
+              class="btn btn-info"
+              (click)="
+                aprobar(item)
+              "
+            >
+              Aprobar
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-secondary"
+              (click)="
+                denegar(item)
+              "
+            >
+              Denegar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
